@@ -340,3 +340,5 @@ ASALocalRun/
 healthchecksdb
 
 *.csproj
+
+.DS_Store

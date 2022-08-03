@@ -73,6 +73,7 @@ else:
 # Sample Output 2:
 # a 3
 
+'''
 import re
 
 def CountWords(text):
@@ -97,3 +98,4 @@ someText = 'Привет привет мопед дед, кадет.привет
 dict = CountWords(someText)
 for x,y in dict.items():
     print(f'{x} --> {y}')
+'''

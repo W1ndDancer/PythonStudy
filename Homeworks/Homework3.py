@@ -34,7 +34,7 @@ except:
 # список: ["123", "234", 123, "567"], ищем: "123", ответ: -1
 # список: [], ищем: "123", ответ: -1
 
-'''
+
 def DeterminateSecondOccurrence(someList, elementToDerminate):
     count = 0
     for i in range(len(someList)):
@@ -46,13 +46,15 @@ def DeterminateSecondOccurrence(someList, elementToDerminate):
             return -1
 
 listForTask = []
+print(f'Our list is {listForTask}')
 elementToFind = "123"
+print(f'Searching: {elementToFind}')
 
 if listForTask == []:
     print('List is empty. Position is --> -1')
 else:
     print(f'Position  of 2nd occurrence is --> {DeterminateSecondOccurrence(listForTask, elementToFind)}')
-'''
+
 
 # 3* (необзательная).
 # Когда Антон прочитал «Войну и мир», ему стало интересно, сколько слов и в каком количестве используется в этой книге.

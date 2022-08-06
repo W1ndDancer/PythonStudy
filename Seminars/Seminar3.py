@@ -29,6 +29,7 @@ for x,y in res[2].items():
 # Задать список из n чисел последовательности фибоначи и вывести их сумму на экран
 
 # VAR 1
+
 '''
 def Fibonacci (number):
     fibonacciList = [0, 1]
@@ -50,11 +51,12 @@ def Fibonacci (number):
     else:
         return f'Fibonacci list not exist'
 
-n = 10
+n = 50
 fib = Fibonacci(n)
 print(f'List = {fib[1]}')
 print(f'Sum = {fib[0]}')
 '''
+
 # VAR 2
 
 '''

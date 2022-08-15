@@ -228,9 +228,9 @@ def CalcPro2(x, operationAmount):
                     ind = n
                     opCount+=1
                 if (bktCls == n + 1) and (bktOpn == (n - 1)):
-                    del x[n+1]
+                    del x[n+1:n+3]
                     del x[n-2:n]
-                    print(f'---> {x}')
+                    # print(f'---> {x}')
         elif ('(' in x) and (')' not in x):
             return print('Mistake in expression. U have missed --> )')
         elif (')' in x ) and ('(' not in x):
@@ -268,10 +268,11 @@ def CalcPro2(x, operationAmount):
         return print(f'answer --> {x[0]}')
 
 # a = input('Enter expression --> ')
-a = '3*(2+2)+1'
+a = '5-(2*2)+2*(2+1)'
 conv = Convert(a)
-opCount = FindOperAmount(a)
-c = CalcPro2(conv, opCount)
+print(conv)
+# opCount = FindOperAmount(a)
+# c = CalcPro2(conv, opCount)
 
 
 

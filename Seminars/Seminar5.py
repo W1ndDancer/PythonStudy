@@ -153,32 +153,6 @@ def SubsList(someList):
         max = someList[i+1]
         newList = []
 
-    # for i in range(len(someList) - 1):
-    #     newList.append(someList[i])
-    #     for j in range(i + 1, len(someList)):
-    #         if someList[j] < someList[j-1]:
-    #             del someList[j]
-    #         if someList[i] < someList[j]:
-    #             newList.append(someList[j])
-    #             if len(newList) > 1:
-    #                 with open('HW5.txt', 'a') as data:
-    #                     data.write(f'{newList}\n')
-    #     newList = []
-
-
-
-
-            # if someList[i] < someList[j]:
-            #     newList.append(someList[j])
-            #     if len(newList) > 1:
-            #         with open('HW5.txt', 'a') as data:
-            #             data.write(f'{newList}\n')
-            #         if  someList[j] > someList[j+1]:
-            #             newList = []
-            # if newList == [] and (someList[i] < someList[i+1]):
-            #     newList.append(someList[i])
-    # newList = []
-
 a = [1, 5, 2, 3, 4, 6, 1, 7]
 SubsList(a)
 

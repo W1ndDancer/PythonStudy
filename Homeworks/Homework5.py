@@ -41,6 +41,7 @@ d.close()
 # например, в 1 файле было 3*x^3 + 5*x^2+10*x+11, в другом 7*x^2+55
 # то в итоге будет, 3*x^3 + 12*x^2+10*x+66
 
+'''
 def PolySumList(pol1, pol2):
     for line1 in pol1:
         line1 = line1.replace(' + ', ' ')
@@ -107,3 +108,4 @@ poly = ConvToStrAndSave(poly)
 
 data1.close()
 data2.close()
+'''

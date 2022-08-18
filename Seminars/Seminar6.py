@@ -163,6 +163,7 @@ data.close()
 # 1+2*3 => 7; 
 # (1+2)*3 => 9;
 
+
 def Convert(equation):
     equation = list(equation)
     convEqv = []
@@ -187,93 +188,95 @@ def FindOperAmount(equation):
             count += 1
     return count
 
-def CalcPro2(x, operationAmount):
+def CalcPro2(x, opAm):
     opList = ['(', ')', '*', '/', '-', '+']
-    operation = 0
+    oper = 0
     ind = 0
     opCount = 0
     bktOpn = 0
     bktCls = 0
     print(x)
-    for i in range(len(opList)):
+    while opAm > 1:
         if ('(' in x) and (')' in x):
             for m in range(len(x)):
                 if x[m] == '(':
                     bktOpn = m
                 elif x[m] == ')':
                     bktCls = m
-            # print(f'{x[bktOpn+1]}; {x[bktCls]}')
-            for n in range(bktOpn+1, bktCls):
-                if (opList[i] == '*') and (x[n] == '*') and (opCount == 0):
-                    operation = x[n-1] * x[n+1]
-                    x[n-1] = operation
-                    ind = n
-                    opCount+=1
-                elif( opList[i] == '/') and (x[n] == '/') and (opCount == 0):
-                    if x[n+1] == 0:
-                        return f'Division by 0!!!'
-                    else:
-                        operation = x[n-1] / x[n+1]
-                        x[n-1] = operation
-                        ind = n
-                        opCount+=1
-                elif (opList[i] == '-') and (x[n] == '-') and (opCount == 0):
-                    operation = x[n-1] - x[n+1]
-                    x[n-1] = operation
-                    ind = n
-                    opCount+=1
-                elif (opList[i] == '+') and (x[n] == '+') and (opCount == 0):
-                    operation = x[n-1] + x[n+1]
-                    x[n-1] = operation
-                    ind = n
-                    opCount+=1
-                if (bktCls == n + 1) and (bktOpn == (n - 1)):
-                    del x[n+1:n+3]
-                    del x[n-2:n]
-                    # print(f'---> {x}')
+                for i in range(len(opList)):
+                    for n in range(bktOpn+1, bktCls+1):
+                        if (x[n + 1] == ')') and (x[n - 1] == '('):
+                            aaa = 333
+                            # print(x[n - 1], x[n + 1])
+                            # del x[n-2:n]
+                            # del x[n2:n]
+                        elif (opList[i] == '*') and (x[n] == '*') and (opCount == 0):
+                            oper = x[n-1] * x[n+1]
+                            x[n-1] = oper
+                            ind = n
+                            opCount+=1
+                        elif( opList[i] == '/') and (x[n] == '/') and (opCount == 0):
+                            if x[n+1] == 0:
+                                return f'Division by 0!!!'
+                            else:
+                                oper = x[n-1] / x[n+1]
+                                x[n-1] = oper
+                                ind = n
+                                opCount+=1
+                        elif (opList[i] == '-') and (x[n] == '-') and (opCount == 0):
+                            oper = x[n-1] - x[n+1]
+                            x[n-1] = oper
+                            ind = n
+                            opCount+=1                        
+                        elif (opList[i] == '+') and (x[n] == '+') and (opCount == 0):
+                            oper = x[n-1] + x[n+1]
+                            x[n-1] = oper
+                            ind = n
+                            opCount+=1
+            # print(x[ind:ind+2])
+                    if ind != ')':
+                        del x[ind:ind+2]
         elif ('(' in x) and (')' not in x):
-            return print('Mistake in expression. U have missed --> )')
+            return f'Mistake in expression. U have missed --> )'
         elif (')' in x ) and ('(' not in x):
-            return print('Mistake in expression. U have missed --> (')
+            return f'Mistake in expression. U have missed --> ('
         else:
             for j in range(len(opList)):
                 for l in range(len(x)):
                     if (opList[j] == '*') and (x[l] == '*') and (opCount == 0):
-                        operation = x[l-1] * x[l+1]
-                        x[l-1] = operation
+                        oper = x[l-1] * x[l+1]
+                        x[l-1] = oper
                         ind = l
                         opCount+=1
                     elif( opList[j] == '/') and (x[l] == '/') and (opCount == 0):
                         if x[l+1] == 0:
                             return f'Division by 0!!!'
                         else:
-                            operation = x[l-1] / x[l+1]
-                            x[l-1] = operation
+                            oper = x[l-1] / x[l+1]
+                            x[l-1] = oper
                             ind = l
                             opCount+=1
                     elif (opList[j] == '-') and (x[l] == '-') and (opCount == 0):
-                        operation = x[l-1] - x[l+1]
-                        x[l-1] = operation
+                        oper = x[l-1] - x[l+1]
+                        x[l-1] = oper
                         ind = l
                         opCount+=1
                     elif (opList[j] == '+') and (x[l] == '+') and (opCount == 0):
-                        operation = x[l-1] + x[l+1]
-                        x[l-1] = operation
+                        oper = x[l-1] + x[l+1]
+                        x[l-1] = oper
                         ind = l
                         opCount+=1
-    del x[ind:ind+2]
-    if operationAmount > 1:
-        CalcPro2(x, operationAmount - 1)
+        print(x)
+        # print(x[ind:ind+2])
+        # del x[ind:ind+2]
+        CalcPro2(x, opAm - 1)
     else:
-        return print(f'answer --> {x[0]}')
+        return print(x[0])
 
 # a = input('Enter expression --> ')
-a = '5-(2*2)+2*(2+1)'
+a = '(2+1-4)+2'
 conv = Convert(a)
-print(conv)
-# opCount = FindOperAmount(a)
-# c = CalcPro2(conv, opCount)
-
-
+opCount = FindOperAmount(a)
+c = print(CalcPro2(conv, opCount))
 
 

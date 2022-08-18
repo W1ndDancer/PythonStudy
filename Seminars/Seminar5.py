@@ -130,6 +130,7 @@ print(f'Missing number is --> {FindMissingNumber(subs)}')
 # *Пример:* 
 # [1, 5, 2, 3, 4, 6, 1, 7] => [1, 2, 3] или [1, 7] или [1, 6, 7] и т.д.
 
+'''
 def SubsList(someList):
     newList = []
     max = someList[0]
@@ -155,6 +156,7 @@ def SubsList(someList):
 
 a = [1, 5, 2, 3, 4, 6, 1, 7]
 SubsList(a)
+'''
 
 # 38. Напишите программу, удаляющую из текста все слова, содержащие "абв"
 

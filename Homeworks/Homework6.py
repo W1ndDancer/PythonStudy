@@ -146,6 +146,8 @@ def Convert(equation):
     equation = list(equation)
     convEqv = []
     numb = 0
+    index = []
+    stop = 0
     for i in range(len(equation)):
         if equation[i].isdigit() and i != len(equation) - 1:
             numb = numb*10 + float(equation[i])
@@ -156,12 +158,24 @@ def Convert(equation):
             convEqv.append(numb)
             convEqv.append(equation[i])
             numb = 0
+    for j in range(len(convEqv)):
+        if convEqv[j] == '.' or convEqv[j] == ',':
+            c = convEqv[j-1] + convEqv[j+1]/10
+            convEqv[j-1] = c
+            index.append(j)
+    for k in range(0, (2*len(index)),2):
+        for l in index:
+            if stop == 0:
+                del convEqv[l-k:l+2-k]
+                stop += 1
+        index.pop(0)
+        stop = 0
     return convEqv
     
-def FindOperAmount(equation):
+def FindOperAmount(conEqv):
     count = 0
-    equation = list(equation)
-    for i in equation:
+    conEqv = list(conEqv)
+    for i in conEqv:
         if i == '*' or i == '/' or i == '+' or i == '-':
             count += 1
     return count
@@ -204,7 +218,7 @@ def CalcPro2(x, operationAmount):
                     x[n-1] = operation
                     ind = n
                     opCount+=1
-                if (bktCls == n + 1) and (bktOpn == (n - 1)):
+                elif (bktCls == n + 1) and (bktOpn == (n - 1)):
                     del x[n+1:n+3]
                     del x[n-2:n]
         elif ('(' in x) and (')' not in x):

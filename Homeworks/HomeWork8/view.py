@@ -13,7 +13,7 @@ def init(c):
     choice = c
 
 def PrintInfo(n,s,b,t,a):
-    answer = input('Options: f - full; n - names, s - surnames, b - birthdays, t - telephones, a - adresses\n Ur option: ')
+    answer = input('Print options: f - full; n - names, s - surnames, b - birthdays, t - telephones, a - adresses\n Ur option: ')
     while answer not in ['f','n', 's', 'b', 't', 'a']:
         answer = input('u did smr wrong, pls tryagain. Ur option: ')
     if answer == 'f':

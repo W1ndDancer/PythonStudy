@@ -99,15 +99,3 @@ def initT(x):
 def init(x):
     global a
     a = x
-
-# n = CreateNewNames()
-# s = CreateNewSurnames()
-# b = CreateNewBirthdays()
-# t = CreateNewTelephones()
-# a = CreateNewAdresses()
-
-# n = {1: ['Val'], 2:['Iry']}
-# s = {1: ['Bryk'], 2:['Bryksina']}
-# b = {1: ['12.08'], 2:['20.07']}
-# t = {1: ['420'], 2:['428']}
-# a = {1: ['Ostrava'], 2:['OstravaM']}

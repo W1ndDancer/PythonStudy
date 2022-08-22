@@ -19,7 +19,7 @@ def GetResult():
             log.SaveFile(n,s,b,t,a)
             view.newDB()
             view.PrintInfo(n,s,b,t,a)
-            break
+            choice = view.getChoice()
         elif choice == 2:
             n = log.LoadFileN()
             s = log.LoadFileS()
@@ -27,7 +27,7 @@ def GetResult():
             t = log.LoadFileT()
             a = log.LoadFileA()
             view.PrintInfo(n,s,b,t,a)
-            break
+            choice = view.getChoice()
         elif choice == 3:
             view.Quit()
             break

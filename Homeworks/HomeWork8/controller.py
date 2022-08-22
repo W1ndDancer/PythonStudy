@@ -18,6 +18,7 @@ def GetResult():
             a = creator.CreateNewAdresses()
             log.SaveFile(n,s,b,t,a)
             view.newDB()
+            view.PrintInfo(n,s,b,t,a)
             break
         elif choice == 2:
             n = log.LoadFileN()

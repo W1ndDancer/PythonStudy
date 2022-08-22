@@ -48,7 +48,7 @@ except:
 # Зенит:2 1 0 1 3
 # Локомотив:2 2 0 0 6
 
-'''
+
 from collections import OrderedDict
 
 def ToursResults(totalGamesPlayed):
@@ -113,7 +113,6 @@ for x,y in ourPointsTable.items():
     print(x,y)
     print()
 
-'''
 
 
 
